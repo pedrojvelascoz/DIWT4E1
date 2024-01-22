@@ -4,12 +4,6 @@
     --fuente-serif: 'Georgia', 'Times', serif;
   }
 
-body {
-    font-family: var(--fuente-serif);
-    margin: 0 auto;
-    padding: 0;
-}
-
 header {
     background-color: #000000;
     padding: 10px 0px 20px 0px;
@@ -19,8 +13,14 @@ header {
     width: 100%;
 }
 
+body {
+    font-family: var(--fuente-serif);
+    margin: 0 auto;
+    padding: 0;
+}
+
 main {
-    display: flex;
+    display: absolute;
     align-items: center;
     justify-content: center;
     width: 75%;
@@ -37,13 +37,30 @@ article img {
     height: auto; /* Mantener la proporción de la imagen */
 }
 
+section img{
+    max-width: 100%; /* Hacer que la imagen sea responsiva y no sobrepase su contenedor */
+    height: auto; /* Mantener la proporción de la imagen */
+    display: block;
+    margin: auto; 
+    align-items: center;
+}
+section a{
+    max-width: 100%; /* Hacer que la imagen sea responsiva y no sobrepase su contenedor */
+    height: auto; /* Mantener la proporción de la imagen */
+    display: flex;
+    margin: 10px 0px 30px 0px;
+    align-items: center;
+    color: orange;
+    margin: 0 auto; /* Esto centra el texto horizontalmente */
+}
+
 main p {
     font-family: var(--fuente-serif);
     text-align: justify;
     color: #333; /* Color gris oscuro */
 }
 
-main article h1 {
+h1 {
     display: flex;
     align-items: center;
     font-family: 'Arial', sans-serif;
@@ -63,6 +80,19 @@ main article section h3 {
     justify-content: left;
     width: 100%;
     font-size: 50px;
+    color: #333; /* Color gris oscuro */
+    margin : 30px 0px 30px 0px;
+}
+
+main article section h4 {
+    display: flex;
+    align-items: left;
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+    font-weight: 300;
+    justify-content: left;
+    width: 100%;
+    font-size: 30px;
     color: #333; /* Color gris oscuro */
     margin : 30px 0px 30px 0px;
 }
@@ -89,7 +119,7 @@ main article h6 {
     color: #333; /* Color gris oscuro */
 }
 
-section p {
+section p, main ul {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 300;
     font-size: 18px;
@@ -97,8 +127,10 @@ section p {
     letter-spacing: 1.25px; /* Ajusta según tus preferencias */
 }
 
+
+
 main section ul {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     font-weight: 300;
     font-size: 18px;
     line-height: 1.8; /* Ajusta según tus preferencias */
@@ -223,4 +255,42 @@ img#desiree {
 p#desi {
     width: 75%; /* Puedes ajustar el valor según tu preferencia */
     margin: auto; /* Centra el último párrafo en el ancho establecido */
+}
+
+#quote {
+
+    font-family: var(--fuente-serif);
+    font-weight: 300;
+    justify-content: left;
+    background-color: #f5f5f5;
+    border-left: 4px solid #ff4400; /* Color de borde izquierdo */
+    margin : 0 auto;
+    font-size: 23px;
+    line-height: 1.5; /* Ajusta según tus preferencias */
+    width: 55%; /* La imagen y el texto ocuparán el 100% del ancho del artículo */
+    padding: 20px 30px;
+}
+
+#milista{
+    display: absolute;
+    text-align: left;
+    justify-content: left;
+    font-family: 'Arial', sans-serif;
+    margin : auto;
+    width: 60%; /* La imagen y el texto ocuparán el 100% del ancho del artículo */
+    padding-block: 5px 10px;;
+}
+
+main section{
+    display: absolute;
+    text-align: left;
+    justify-content: left;
+    margin : auto;
+    width: 100%; /* La imagen y el texto ocuparán el 100% del ancho del artículo */
+    padding-block: 5px 10px;;
+}
+
+#none {
+    list-style-type: none;
+    padding: 10px;
 }
