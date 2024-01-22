@@ -1,22 +1,55 @@
+/*Espacio para variables globales. Colores y tipografía*/
 
 :root {
     --fuente-sans-serif: 'Helvetica', 'Arial', sans-serif;
     --fuente-serif: 'Georgia', 'Times', serif;
-  }
-
-header {
-    background-color: #000000;
-    padding: 10px 0px 20px 0px;
-    text-align: center;
-    font-family: var(--fuente-sans-serif);
-    margin: 0;
-    width: 100%;
+    --color-Negro: #000000;
+    --color-Blanco: #ffffff;
+    --color-GrisOscuro: #333;
 }
 
+/* Header y footer. Primero elementos comunes, luego paddings específicos*/
+
+header, footer {
+    font-family: var(--fuente-sans-serif);
+    background-color: var(--color-Negro);
+    width: 100%;
+    text-align: center;
+    color: var(--color-Blanco);
+}
+
+header {
+    padding: 10px 0px 20px;
+}
+
+footer {
+    padding: 40px 0px;
+}
+
+nav a {
+    display: block;
+    padding: 6px 2px;
+    color: var(--color-Blanco);
+    text-decoration: none;
+}
+
+nav a:hover { /* Navegacion del header al pasar el ratón por encima */
+    color: #ff1616;
+}
+
+nav a.currentPage { /* Vista del elemento actual. No me quiere */
+    font-weight: bold;
+    font-style: italic;
+}
+
+nav ul li {
+    display: block;
+}
+
+/* Propiedades generales para la alineación del contenido (body ocupa todo y reducciones posteriores)*/
+
 body {
-    font-family: var(--fuente-serif);
     margin: 0 auto;
-    padding: 0;
 }
 
 main {
@@ -27,38 +60,25 @@ main {
     margin: 0 auto;
 }
 
-article {
+/* Disposicion es de contenedores */
+
+article, article img { /* Todo el articulo al 100%, y la imagen del primer robot*/
     text-align: center;
-    width: 100%; /* La imagen y el texto ocuparán el 100% del ancho del artículo */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
-article img {
-    max-width: 100%; /* Hacer que la imagen sea responsiva y no sobrepase su contenedor */
-    height: auto; /* Mantener la proporción de la imagen */
-}
-
-section img{
-    max-width: 100%; /* Hacer que la imagen sea responsiva y no sobrepase su contenedor */
-    height: auto; /* Mantener la proporción de la imagen */
+section img { /* Resto de imagenes, a mitad */
+    max-width: 100%;
+    width: 50%;
+    height: auto;
     display: block;
-    margin: auto; 
+    margin: auto;
     align-items: center;
-}
-section a{
-    max-width: 100%; /* Hacer que la imagen sea responsiva y no sobrepase su contenedor */
-    height: auto; /* Mantener la proporción de la imagen */
-    display: flex;
-    margin: 10px 0px 30px 0px;
-    align-items: center;
-    color: orange;
-    margin: 0 auto; /* Esto centra el texto horizontalmente */
 }
 
-main p {
-    font-family: var(--fuente-serif);
-    text-align: justify;
-    color: #333; /* Color gris oscuro */
-}
+/* Títulos de las tres páginas*/
 
 h1 {
     display: flex;
@@ -68,135 +88,120 @@ h1 {
     justify-content: center;
     width: 100%;
     font-size: 70px;
-    color: #333; /* Color gris oscuro */
+    color: var(--color-GrisOscuro);
+}
+
+/* Disposicion general del texto dentro del main. Tipografía, justificado y color */
+
+main p {
+    font-family: var(--fuente-serif);
+    text-align: justify;
+    color: var(--color-GrisOscuro);
+}
+
+/*Index y robots de ficción tienen similitudes en varias partes. Se agrupan y se especifican las concreciones*/
+
+main article section h3, main article section h4, #autor, #fecha, section a  {
+    display: flex;
+    align-items: left;
+    text-align: left;
+    font-family: var(--fuente-sans-serif);
+    font-weight: 300;
+    justify-content: left;
+    width: 100%;
+    color: var(--color-GrisOscuro);
+    margin: 30px 0px;
 }
 
 main article section h3 {
-    display: flex;
-    align-items: left;
-    text-align: left;
-    font-family: 'Arial', sans-serif;
-    font-weight: 300;
-    justify-content: left;
-    width: 100%;
     font-size: 50px;
-    color: #333; /* Color gris oscuro */
-    margin : 30px 0px 30px 0px;
 }
 
 main article section h4 {
-    display: flex;
-    align-items: left;
-    text-align: left;
-    font-family: 'Arial', sans-serif;
-    font-weight: 300;
-    justify-content: left;
-    width: 100%;
     font-size: 30px;
-    color: #333; /* Color gris oscuro */
-    margin : 30px 0px 30px 0px;
 }
 
-main article h4 {
-    display: flex;
-    align-items: left;
-    font-family: 'Arial', sans-serif;
-    font-weight: 300;
-    justify-content: left;
+#autor {
     font-size: 14px;
-    margin : 0px;
-    color: orange; /* Color gris oscuro */
-}
-
-main article h6 {
-    display: flex;
-    align-items: left;
-    font-family: 'Arial', sans-serif;
-    font-weight: 300;
-    justify-content: left;
-    font-size: 14px;
-    margin : 10px 0px 30px 0px;
-    color: #333; /* Color gris oscuro */
-}
-
-section p, main ul {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 1.8; /* Ajusta según tus preferencias */
-    letter-spacing: 1.25px; /* Ajusta según tus preferencias */
-}
-
-
-
-main section ul {
-    font-family: 'Arial', sans-serif;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 1.8; /* Ajusta según tus preferencias */
-    letter-spacing: 1.25px; /* Ajusta según tus preferencias */
-    text-align: left; /* Alineación a la izquierda */
-    color: #333; /* Color gris oscuro */
-}
-
-
-header img {
-    width: 100px; /* Ajusta el tamaño del isologo según sea necesario */
-}
-
-nav ul li {
-    display: block;
-}
-
-nav a:hover {
-    color: #ff1616;
-}
-
-footer {
-    color: #ffffff;
-    background-color: #000000;
-    padding: 40px 0px;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    font-family: var(--fuente-sans-serif);
-}
-
-/* Estilos para el menú de navegación */
-nav ul {
-    list-style: block;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: block;
-}
-
-.texto-naranja {
+    margin: 0px;
+    text-decoration: none;
     color: orange;
 }
 
-nav a {
-    display: block;
-    padding: 6px 2px;
-    color: #fff;
+#autor:hover {
+    text-decoration: underline; /* Añade subrayado en el estado hover */
+}
+
+#fecha {
+    font-size: 14px;
+    margin: 10px 0px 30px 0px;
+}
+
+section a {
+    margin: 10px 0px 30px 0px;
+    justify-content: center;
+    color: orange;
+    margin: 0 auto;
     text-decoration: none;
 }
 
-nav a.currentPage {
-    font-weight: bold;
-    font-style: italic;
-    color: green;
+section a:hover {
+    text-decoration: underline; 
 }
+
+main section {
+    display: block;
+    align-items: center;
+    text-align: left;
+    justify-content: left;
+    margin: auto;
+    width: 100%;
+    padding-block: 5px 10px;
+}
+
+/*Bloques de texto y enumeradores.*/
+
+section p, main ul, main section ul {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.8;
+    letter-spacing: 1.25px;
+    color: var(--color-GrisOscuro);
+}
+
+section p, main ul {
+    font-family: var(--fuente-sans-serif);
+}
+
+main section ul {
+    font-family: 'Arial', sans-serif;
+    text-align: left;
+}
+
+#milista {
+    display: absolute;
+    text-align: left;
+    justify-content: left;
+    font-family: 'Arial', sans-serif;
+    margin: auto;
+    width: 60%;
+    padding-block: 5px 10px;
+}
+
+#none {
+    list-style-type: none;
+    padding: 10px;
+}
+
+/* Videos y contenedores de videos*/
 
 .video-responsive {
     position: relative;
-    padding-bottom: 42.5%; /* Proporción 16:9 para videos de YouTube */
+    padding-bottom: 42.5%;
     height: 0;
     overflow: hidden;
-    width: 60%; /* Ajusta el ancho del contenedor según tus necesidades */
-    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
+    width: 60%;
+    margin: 0 auto;
 }
 
 .video-responsive iframe {
@@ -207,90 +212,80 @@ nav a.currentPage {
     height: 100%;
 }
 
-p#leyenda  {
+/*Leyendas de fotos y videos y textos en naranja sin span*/
+
+p#leyenda, p#leyendaVideo {
     display: flex;
     align-items: right;
-    font-family: 'Arial', sans-serif;
+    font-family: var(--fuente-sans-serif);
     font-weight: 300;
     justify-content: right;
     font-size: 14px;
-    margin : 10px 0px 30px 0px;
-    color: #333; /* Color gris oscuro */
-
-}
-    
-p#leyendaVideo  {
-    display: flex;
-    align-items: right;
-    font-family: 'Arial', sans-serif;
-    font-weight: 300;
-    justify-content: right;
-    font-size: 14px;
-    margin : 10px 0px 30px 0px;
-    color: #333; /* Color gris oscuro */
-    width: 60%; /* Ajusta el ancho del texto al mismo que el video */
-    margin: 0 auto; /* Esto centra el texto horizontalmente */
+    margin: 10px 0px 30px 0px;
+    color: var(--color-GrisOscuro);
 }
 
-p#leyenda > a {
-    color: orange; /* Color gris oscuro */
+p#leyendaVideo {
+    width: 60%;
+    margin: 0 auto;
 }
+
+p#leyenda>a {
+    margin: 0px 0px 0px 5px;
+    color: orange;
+    text-decoration: none;
+}
+
+p#leyenda>a:hover {
+    text-decoration: underline; 
+    }
+
+section p a#enlace, p a {
+    display: inline;
+    color: orange;
+    text-decoration: none;
+}
+
+section p a#enlace:hover, p a:hover {
+    display: inline;
+    text-decoration: underline;
+}
+
+/* Recuadro, foto y descripción de la autora */
 
 p#autora {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--fuente-sans-serif);
     font-weight: 100;
     font-size: 14px;
-    line-height: 1.8; /* Ajusta según tus preferencias */
-    letter-spacing: 1.25px; /* Ajusta según tus preferencias */
+    line-height: 1.8;
+    letter-spacing: 1.25px;
     background-color: gainsboro;
     text-align: center;
 }
 
 img#desiree {
-    border-radius: 50%; /* Esto hace que la imagen sea redonda */
-    overflow: hidden; /* Esto asegura que la imagen no sobresalga del contenedor redondo */
+    width: 15%;
+    border-radius: 50%;
+    overflow: hidden;
     margin: 40px 0px 0px 0px;
 }
 
 p#desi {
-    width: 75%; /* Puedes ajustar el valor según tu preferencia */
-    margin: auto; /* Centra el último párrafo en el ancho establecido */
+    width: 75%;
+    margin: auto;
 }
 
-#quote {
+/* Citas célebres*/
 
+#quote {
     font-family: var(--fuente-serif);
     font-weight: 300;
     justify-content: left;
     background-color: #f5f5f5;
-    border-left: 4px solid #ff4400; /* Color de borde izquierdo */
-    margin : 0 auto;
+    border-left: 4px solid #ff4400;
+    margin: 0 auto;
     font-size: 23px;
-    line-height: 1.5; /* Ajusta según tus preferencias */
-    width: 55%; /* La imagen y el texto ocuparán el 100% del ancho del artículo */
+    line-height: 1.5;
+    width: 55%;
     padding: 20px 30px;
-}
-
-#milista{
-    display: absolute;
-    text-align: left;
-    justify-content: left;
-    font-family: 'Arial', sans-serif;
-    margin : auto;
-    width: 60%; /* La imagen y el texto ocuparán el 100% del ancho del artículo */
-    padding-block: 5px 10px;;
-}
-
-main section{
-    display: absolute;
-    text-align: left;
-    justify-content: left;
-    margin : auto;
-    width: 100%; /* La imagen y el texto ocuparán el 100% del ancho del artículo */
-    padding-block: 5px 10px;;
-}
-
-#none {
-    list-style-type: none;
-    padding: 10px;
 }
