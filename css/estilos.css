@@ -304,3 +304,10 @@ p#desi {
     width: 55%;
     padding: 20px 30px;
 }
+
+/* Elemento actual navegación*/
+
+#actual {
+    font-weight: bold;
+    font-style: italic;
+}
